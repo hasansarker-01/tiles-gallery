@@ -2,6 +2,7 @@
 import "./globals.css";
 
 import Nav from "@/components/Navbar";
+import Fotter from "@/components/Footer";
 // import Marq from "@/components/Marquee";
 
 import { ToastContainer } from "react-toastify";
@@ -20,6 +21,7 @@ export default function RootLayout({ children }) {
         <main className="pt-24">
           {children}
         </main>
+        <Fotter />
 
         <ToastContainer
           position="top-right"

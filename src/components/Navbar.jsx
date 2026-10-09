@@ -1,4 +1,3 @@
-
 "use client";
 
 import Image from "next/image";
@@ -12,6 +11,7 @@ const Logo = "/images/tials/Lgog.jpg";
 
 export default function Header() {
     const router = useRouter();
+
 
     const [user, setUser] = useState(null);
     const [loading, setLoading] = useState(true);
@@ -93,17 +93,21 @@ export default function Header() {
         }
     };
 
+    const navLinkClass =
+        "shrink-0 rounded-lg px-3 py-2 text-sm font-semibold text-black transition-colors hover:bg-teal-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-teal-600";
+
     return (
         <>
-            <header className="fixed top-0 left-0 right-0 z-50 border-b border-teal-400/30 `bg-gradient-to-r from-slate-950 via-teal-950 to-slate-900 text-black shadow-lg">
-                <nav className="mx-auto max-w-7xl px-4">
+            <header className="fixed left-0 right-0 top-0 z-50 border-b border-teal-200 bg-green-200 from-teal-100 via-cyan-100 to-blue-100 text-black shadow-lg">
+                <nav className="mx-auto max-w-7xl px-3 sm:px-5 lg:px-8">
+                    {/* Main navigation */}
                     <div className="flex min-h-20 items-center justify-between gap-3">
                         {/* Logo */}
                         <Link
                             href="/"
-                            className="flex shrink-0 items-center gap-3"
+                            className="flex min-w-0 shrink items-center gap-2 sm:gap-3"
                         >
-                            <div className="flex h-14 w-14 items-center justify-center rounded-xl bg-teal-400 p-2 text-slate-950 shadow-md">
+                            <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl border border-teal-200 bg-white p-1.5 shadow-sm sm:h-14 sm:w-14 sm:p-2">
                                 <Image
                                     src={Logo}
                                     alt="Tiles Gallery Logo"
@@ -114,28 +118,29 @@ export default function Header() {
                                 />
                             </div>
 
-                            <div>
-                                <h1 className="text-lg font-extrabold tracking-tight text-violet-700 sm:text-xl">
+                            <div className="min-w-0">
+                                <h1 className="truncate text-base font-extrabold tracking-tight text-black sm:text-xl">
                                     Tiles Gallery
                                 </h1>
-                                <p className="hidden text-xs text-teal-700 sm:block">
+
+                                <p className="hidden text-xs text-black/70 sm:block">
                                     Discover Your Perfect Aesthetic
                                 </p>
                             </div>
                         </Link>
 
                         {/* Desktop navigation */}
-                        <div className="hidden items-center gap-2 md:flex">
+                        <div className="hidden items-center gap-1 md:flex lg:gap-2">
                             <Link
                                 href="/"
-                                className="rounded-lg px-3 py-2 text-sm font-semibold text-black transition hover:bg-white/10 hover:text-teal-200"
+                                className={navLinkClass}
                             >
                                 Home
                             </Link>
 
                             <Link
                                 href="/all-tiles"
-                                className="rounded-lg px-3 py-2 text-sm font-semibold text-black transition hover:bg-white/10 hover:text-teal-200"
+                                className={navLinkClass}
                             >
                                 All Tiles
                             </Link>
@@ -143,7 +148,7 @@ export default function Header() {
                             {user && (
                                 <Link
                                     href="/my-profile"
-                                    className="rounded-lg px-3 py-2 text-sm font-semibold text-black transition hover:bg-white/10 hover:text-teal-200"
+                                    className={navLinkClass}
                                 >
                                     My Profile
                                 </Link>
@@ -151,11 +156,11 @@ export default function Header() {
                         </div>
 
                         {/* Authentication actions */}
-                        <div className="flex items-center gap-2">
+                        <div className="flex shrink-0 items-center gap-2">
                             {!loading && !user && (
                                 <Link
                                     href="/login"
-                                    className="inline-flex items-center justify-center rounded-xl bg-teal-400 px-4 py-2 text-sm font-bold text-slate-950 transition hover:bg-teal-300"
+                                    className="inline-flex items-center justify-center rounded-xl border border-teal-600 bg-teal-500 px-3 py-2 text-sm font-bold text-black shadow-sm transition hover:bg-teal-400 sm:px-5"
                                 >
                                     Login
                                 </Link>
@@ -166,12 +171,17 @@ export default function Header() {
                                     <Link
                                         href="/my-profile"
                                         aria-label="My profile"
+                                        className="rounded-full focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-teal-600"
                                     >
                                         <Avatar
                                             src={user.image || undefined}
-                                            name={user.name || user.email || "User"}
+                                            name={
+                                                user.name ||
+                                                user.email ||
+                                                "User"
+                                            }
                                             color="success"
-                                            className="h-9 w-9 cursor-pointer"
+                                            className="h-9 w-9 cursor-pointer border-2 border-white shadow-sm"
                                         />
                                     </Link>
 
@@ -180,29 +190,27 @@ export default function Header() {
                                         color="danger"
                                         variant="flat"
                                         onPress={openLogoutModal}
-                                        className="font-semibold"
+                                        className="bg-red-100 font-semibold text-red-800 hover:bg-red-200"
                                     >
                                         Logout
                                     </Button>
                                 </>
                             )}
                         </div>
-
-
                     </div>
 
                     {/* Mobile navigation */}
-                    <div className="flex items-center gap-2 overflow-x-auto pb-3 md:hidden">
+                    <div className="-mx-3 flex w-[calc(100%+1.5rem)] items-center gap-2 overflow-x-auto border-t border-teal-200 bg-teal-200/80 px-3 py-2 md:hidden">
                         <Link
                             href="/"
-                            className="shrink-0 rounded-lg px-3 py-2 text-sm font-medium text-white hover:bg-white/10"
+                            className={navLinkClass}
                         >
                             Home
                         </Link>
 
                         <Link
                             href="/all-tiles"
-                            className="shrink-0 rounded-lg px-3 py-2 text-sm font-medium text-white hover:bg-white/10"
+                            className={navLinkClass}
                         >
                             All Tiles
                         </Link>
@@ -210,7 +218,7 @@ export default function Header() {
                         {user && (
                             <Link
                                 href="/my-profile"
-                                className="shrink-0 rounded-lg px-3 py-2 text-sm font-medium text-white hover:bg-white/10"
+                                className={navLinkClass}
                             >
                                 Profile
                             </Link>
@@ -307,4 +315,6 @@ export default function Header() {
             )}
         </>
     );
+
+
 }

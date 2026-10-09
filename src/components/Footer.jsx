@@ -5,13 +5,13 @@ import Link from "next/link";
 
 export default function Footer() {
     return (
-        <footer className="bg-gray-100 dark:bg-gray-900 border-t border-gray-200 dark:border-gray-800">
+        <footer className="bg-violet-200 dark:bg-gray-900 border-t border-blue-700 dark:border-gray-800">
             <div className="max-w-7xl mx-auto px-4 py-12">
                 <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
                     <div>
                         <Link
                             href="/"
-                            className="text-2xl font-bold text-violet-600"
+                            className="text-2xl font-bold text-violet-700"
                         >
                             Tiles Gallery
                         </Link>
@@ -27,7 +27,7 @@ export default function Footer() {
                             Quick Links
                         </h3>
 
-                        <ul className="mt-4 space-y-3 text-sm text-gray-600 dark:text-gray-400">
+                        <ul className="mt-4 space-y-3 text-sm text-gray-700 dark:text-gray-400">
                             <li><Link href="/" className="hover:text-violet-600">Home</Link></li>
                             <li><Link href="/all-tiles" className="hover:text-violet-600">All Tiles</Link></li>
                             <li><Link href="/login" className="hover:text-violet-600">Login</Link></li>
@@ -75,7 +75,7 @@ export default function Footer() {
                 <div className="h-px bg-gray-200 dark:bg-gray-800 my-8" />
 
                 <div className="flex flex-col sm:flex-row items-center justify-between gap-3 text-sm text-gray-500">
-                    <p>© {new Date().getFullYear()} Tiles Gallery. All rights reserved.</p>
+                    <p>© 2026 Tiles Gallery. All rights reserved.</p>
                     <p>Designed with care for beautiful spaces.</p>
                 </div>
             </div>
