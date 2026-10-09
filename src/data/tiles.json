@@ -1,0 +1,98 @@
+[
+    {
+        "id": "tile_001",
+        "title": "Ceramic Blue Tile",
+        "description": "Premium ceramic tile with blue glaze finish",
+        "image": "/images/tiles/tile_001.jpg",
+        "category": "ceramic",
+        "price": 45.99,
+        "currency": "USD",
+        "dimensions": "60x60 cm",
+        "material": "Ceramic",
+        "inStock": true
+    },
+    {
+        "id": "tile_002",
+        "title": "Modern Marble Tile",
+        "description": "Elegant marble-inspired tile for modern interiors",
+        "image": "/images/tiles/tile_002.jpg",
+        "category": "marble",
+        "price": 59.99,
+        "currency": "USD",
+        "dimensions": "60x120 cm",
+        "material": "Porcelain",
+        "inStock": true
+    },
+    {
+        "id": "tile_003",
+        "title": "Geometric Pattern Tile",
+        "description": "Stylish geometric tile with a contemporary design",
+        "image": "/images/tiles/tile_003.jpg",
+        "category": "geometric",
+        "price": 39.99,
+        "currency": "USD",
+        "dimensions": "30x30 cm",
+        "material": "Ceramic",
+        "inStock": true
+    },
+    {
+        "id": "tile_004",
+        "title": "Minimal White Tile",
+        "description": "Clean white tile perfect for minimalist spaces",
+        "image": "/images/tiles/tile_004.jpg",
+        "category": "minimal",
+        "price": 34.99,
+        "currency": "USD",
+        "dimensions": "60x60 cm",
+        "material": "Porcelain",
+        "inStock": true
+    },
+    {
+        "id": "tile_005",
+        "title": "Terracotta Stone Tile",
+        "description": "Warm terracotta tile with a natural stone finish",
+        "image": "/images/tiles/tile_005.jpg",
+        "category": "stone",
+        "price": 49.99,
+        "currency": "USD",
+        "dimensions": "40x40 cm",
+        "material": "Stone",
+        "inStock": true
+    },
+    {
+        "id": "tile_006",
+        "title": "Dark Slate Tile",
+        "description": "Premium dark slate tile for elegant interiors",
+        "image": "/images/tiles/tile_006.jpg",
+        "category": "slate",
+        "price": 64.99,
+        "currency": "USD",
+        "dimensions": "60x60 cm",
+        "material": "Slate",
+        "inStock": true
+    },
+    {
+        "id": "tile_007",
+        "title": "Ocean Mosaic Tile",
+        "description": "Beautiful blue mosaic tile inspired by ocean waves",
+        "image": "/images/tiles/tile_007.jpg",
+        "category": "mosaic",
+        "price": 42.99,
+        "currency": "USD",
+        "dimensions": "30x30 cm",
+        "material": "Glass",
+        "inStock": true
+    },
+    {
+        "id": "tile_008",
+        "title": "Luxury Gold Tile",
+        "description": "Elegant decorative tile with a luxurious gold finish",
+        "image": "/images/tiles/tile_008.jpg",
+        "category": "luxury",
+        "price": 79.99,
+        "currency": "USD",
+        "dimensions": "60x120 cm",
+        "material": "Porcelain",
+        "inStock": true
+    }
+]
