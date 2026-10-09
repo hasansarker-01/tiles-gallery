@@ -1,81 +1,66 @@
-# Tiles Gallery
 
-Discover Your Perfect Aesthetic — a responsive tile gallery built with Next.js, Tailwind CSS, and HeroUI.
+# 🧱 Tiles Gallery
 
-## About the Project
+### Discover Your Perfect Aesthetic
 
-Tiles Gallery is a modern web application where users can explore tile collections, search for designs, view tile details, and manage their profiles.
+Tiles Gallery is a responsive web application for exploring and discovering beautiful tile designs. Users can browse tiles, search by title, view tile details, and manage their profiles after signing in.
 
-## Live Website
+## 🌐 Live Website
 
-* **Live URL:** Add your deployed Vercel URL here.
-* **GitHub Repository:** Add your GitHub repository URL here.
+- **Live URL:** Add your deployed Vercel URL here.
+- **GitHub Repository:** https://github.com/hasansarker-01/Assignment-8
 
-## Key Features
+## ✨ Key Features
 
-* Responsive design for mobile, tablet, and desktop.
-* Modern UI with Tailwind CSS and HeroUI.
-* Dark mode styling.
-* Browse and search tile collections.
-* Featured tiles on the homepage.
-* Tile details pages.
-* User registration and login with Better Auth.
-* Google social login.
-* Protected profile and tile detail pages.
-* User profile viewing and editing.
-* Toast notifications for success and error messages.
-* Custom navigation bar and footer.
-* Loading and not-found states.
+- **Home Page:** Attractive banner with a "Discover Your Perfect Aesthetic" heading and a Browse Now button.
+- **Featured Tiles:** Displays selected tile designs on the homepage.
+- **All Tiles Gallery:** Browse available tiles and search by title.
+- **Tile Details:** View tile images, descriptions, creator information, styles, and tags.
+- **User Authentication:** Register and log in using email and password.
+- **Google Login:** Sign in with a Google account.
+- **My Profile:** View profile information and update your name and profile image URL.
+- **Responsive Design:** Supports mobile, tablet, and desktop screens.
+- **Loading State:** Displays a loader while data is loading.
+- **Custom Footer:** Includes social media links and contact information.
+- **Protected Routes:** Restricts access to private pages for unauthenticated users.
+- **Interactive UI:** Includes a scrolling marquee and animated elements.
 
-## Technologies Used
+## 🛠️ Technologies Used
 
-* Next.js
-* React
-* Tailwind CSS
-* HeroUI
-* Better Auth
-* MongoDB
-* React Toastify
-* Animate.css, React Spring, or SwiperJS (if integrated)
+- Next.js (App Router)
+- React
+- JavaScript
+- Tailwind CSS
+- HeroUI
+- Better Auth
+- MongoDB
+- React Toastify
+- Animate.css / React Spring / SwiperJS — include the package actually used in the project.
 
-## Installation
+## 🔐 Environment Variables
 
-1. Clone the repository:
+Configure the required environment variables in your local `.env.local` file and in your deployment platform.
 
-   ```bash
-   git clone YOUR_GITHUB_REPOSITORY_URL
-   ```
+Example variable names:
 
-2. Open the project directory:
+```env
+MONGODB_URI=your_mongodb_connection_string
+BETTER_AUTH_SECRET=your_better_auth_secret
+BETTER_AUTH_URL=http://localhost:3000
+GOOGLE_CLIENT_ID=your_google_client_id
+GOOGLE_CLIENT_SECRET=your_google_client_secret
+```
 
-   ```bash
-   cd YOUR_PROJECT_FOLDER
-   ```
+Use the exact variable names required by your application. Never commit `.env.local` or expose secret values publicly.
 
-3. Install dependencies:
+## 🚀 Deployment
 
-   ```bash
-   npm install
-   ```
+This project can be deployed using Vercel.
 
-4. Create a `.env.local` file and configure the required environment variables.
+After deployment, update the Live URL above with your actual website URL. Verify that the homepage, authentication pages, All Tiles page, and other routes work correctly when opened directly or reloaded.
 
-5. Start the development server:
+## 👨‍💻 Author
 
-   ```bash
-   npm run dev
-   ```
+**Hasan Sarker**
 
-6. Open http://localhost:3000 in your browser.
-
-## Environment Variables
-
-Add the environment variables required by your Better Auth and MongoDB configuration to `.env.local`. Do not commit secrets or API keys to GitHub.
-
-## Deployment
-
-Deploy the application using Vercel. Configure the required environment variables in the Vercel project settings before deployment.
-
-## Author
-
-Tiles Gallery Project
+GitHub: https://github.com/hasansarker-01
