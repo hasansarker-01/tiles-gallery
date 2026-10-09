@@ -90,7 +90,7 @@ export default function MyProfile() {
                             <Avatar
                                 src={user.image || undefined}
                                 name={user.name || "User"}
-                                isBordered
+                                
                                 color="secondary"
                                 className="w-28 h-28 text-3xl"
                             />

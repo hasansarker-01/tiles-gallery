@@ -2,7 +2,9 @@
 "use client";
 
 import { useMemo, useState } from "react";
+import Image from "next/image";
 import Link from "next/link";
+
 import { Card, Input, Chip, Button } from "@heroui/react";
 import tiles from "@/data/tiles.json";
 
@@ -38,34 +40,33 @@ export default function AllTiles() {
           </p>
         </header>
 
-        {/* HeroUI Search Input */}
+        {/* Search Input */}
         <div className="mx-auto mb-12 max-w-xl">
           <Input
             label="Search tiles"
             placeholder="Search by tile title..."
             value={search}
-            onChange={setSearch}
+            onChange={(event) => setSearch(event.target.value)}
             variant="bordered"
             size="lg"
             aria-label="Search tiles by title"
-            endContent={
-              search ? (
-                <Button
-                  isIconOnly
-                  size="sm"
-                  variant="light"
-                  aria-label="Clear search"
-                  onPress={() => setSearch("")}
-                >
-                  ✕
-                </Button>
-              ) : null
-            }
           />
+
+          {search && (
+            <Button
+              size="sm"
+              variant="flat"
+              color="secondary"
+              className="mt-3"
+              onPress={() => setSearch("")}
+            >
+              Clear Search
+            </Button>
+          )}
         </div>
 
         {/* Result Count */}
-        <div className="mb-6 flex items-center justify-between">
+        <div className="mb-6">
           <p className="text-sm text-gray-600 dark:text-gray-400">
             Showing{" "}
             <span className="font-semibold text-gray-900 dark:text-white">
@@ -73,17 +74,6 @@ export default function AllTiles() {
             </span>{" "}
             {filteredTiles.length === 1 ? "tile" : "tiles"}
           </p>
-
-          {search && (
-            <Button
-              size="sm"
-              variant="flat"
-              color="secondary"
-              onPress={() => setSearch("")}
-            >
-              Clear Search
-            </Button>
-          )}
         </div>
 
         {/* Tiles Gallery */}
@@ -94,21 +84,18 @@ export default function AllTiles() {
                 key={tile.id}
                 className="group overflow-hidden border border-gray-200 bg-white shadow-sm transition-all duration-300 hover:shadow-xl dark:border-gray-800 dark:bg-gray-900"
               >
-                <div className="relative overflow-hidden">
-                  <img
+                {/* Tile Image */}
+                <div className="relative h-56 w-full overflow-hidden">
+                  <Image
                     src={tile.image}
                     alt={tile.title}
-                    loading="lazy"
-                    className="h-56 w-full object-cover transition-transform duration-500 group-hover:scale-105"
+                    width={500}
+                    height={350}
+                    className="h-56 w-full object-cover"
                   />
-
-                  <div className="absolute left-3 top-3">
-                    <Chip color="secondary" size="sm">
-                      {tile.category}
-                    </Chip>
-                  </div>
                 </div>
 
+                {/* Tile Details */}
                 <div className="w-full p-5">
                   <h2 className="line-clamp-1 text-xl font-bold text-gray-900 dark:text-white">
                     {tile.title}
@@ -132,7 +119,7 @@ export default function AllTiles() {
 
                   <Button
                     as={Link}
-                    href={`/tile/${tile.id}`}
+                    href={`/ tile / ${tile.id} `}
                     color="secondary"
                     className="w-full font-semibold"
                   >
@@ -143,7 +130,8 @@ export default function AllTiles() {
             ))}
           </div>
         ) : (
-          <div className="flex min-h-[300px] items-center justify-center">
+          /* Empty Search Results */
+          <div className="flex min-h-75 items-center justify-center">
             <div className="text-center">
               <div className="mb-4 text-6xl">🔍</div>
 
@@ -169,3 +157,4 @@ export default function AllTiles() {
     </main>
   );
 }
+

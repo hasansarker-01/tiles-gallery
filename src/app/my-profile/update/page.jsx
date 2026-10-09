@@ -156,7 +156,7 @@ export default function UpdateProfile() {
                                 <Avatar
                                     src={user.image || undefined}
                                     name={user.name || "User"}
-                                    isBordered
+
                                     color="secondary"
                                     className="w-24 h-24 mx-auto text-2xl"
                                 />
